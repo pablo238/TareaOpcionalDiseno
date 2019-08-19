@@ -17,7 +17,7 @@ class CreateVehiculoTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('dueno')->references('id')->on('dueno');
             $table->string('placa');
-            $table->string('marca')->references('id')->on('marca');
+            $table->string('marca')->references('nombre')->on('marca');
             $table->timestamps();
         });
     }

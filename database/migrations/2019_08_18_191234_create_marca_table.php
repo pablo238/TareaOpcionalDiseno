@@ -14,8 +14,7 @@ class CreateMarcaTable extends Migration
     public function up()
     {
         Schema::create('marca', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('nombre');
+            $table->string('nombre')->unique();
             $table->timestamps();
         });
     }

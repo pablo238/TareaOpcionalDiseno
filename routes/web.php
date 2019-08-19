@@ -18,3 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/registro', 'RegistroController@view')->name('registrarVehiculo');
+Route::post('/registros', 'RegistroController@store')->name('guardarRegistro');
