@@ -113,7 +113,7 @@
             </div>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('registrarVehiculo') }}"> Atras</a>
+            <a class="btn btn-primary" href="{{ route('inicio') }}"> Inicio</a>
         </div>
     </div>
 @endsection

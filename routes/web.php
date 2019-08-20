@@ -14,9 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/A765', 'HomeController@index')->name('inicio');
 Route::get('/registro', 'RegistroController@view')->name('registrarVehiculo');
 Route::post('/registros', 'RegistroController@store')->name('guardarRegistro');
+Route::get('/listado', 'ListadoController@view')->name('listadoVehiculos');
+Route::get('/estadisticas', 'EstadisticasController@view')->name('estadisticasVehiculo');

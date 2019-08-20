@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\DB;
 
 class RegistroController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function view()
     {
         $marcas = Marca::all();
@@ -17,10 +22,10 @@ class RegistroController extends Controller
     public function store(Request $request)
     {
         $message=([
-            'marca.exists' => 'Este marca no existe',
+            'marca.exists' => $request['marca'].' no es una marca valida',
         ]);
         $request->validate([
-            'marca' => 'required|string',
+            'marca' => 'exists:marca,nombre',
         ],$message);
 
         DB::table('dueno')->insert(array(
@@ -39,6 +44,6 @@ class RegistroController extends Controller
         ));
 
         return redirect() -> route('registrarVehiculo')
-            -> with('success','Vehiculo registrado exitosamente');
+            -> with('success','Registro exitoso');
     }
 }

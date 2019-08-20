@@ -9,4 +9,6 @@ class Vehiculo extends Model
     protected $fillable = [
         'placa',  'marca','dueno'
     ];
+
+    protected $table = "vehiculo";
 }
